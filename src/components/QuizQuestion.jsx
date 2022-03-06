@@ -9,7 +9,7 @@ const QuizQuestion = ({question}) => {
     }
 
     return(
-        <div className="card" style={{width: "18rem", margin: "5px"}}>
+        <div className="card" style={{width: "28rem", margin: "5px"}}>
             <div className="card-body">
                 <h5 className="card-title">{question.question}</h5>
             </div>
