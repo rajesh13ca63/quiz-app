@@ -1,0 +1,29 @@
+.header-bg {
+    background-color: teal;
+    
+}
+.navbar-text {
+    color: white;;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: rosybrown;
+    background-color: bisque;
+    text-decoration: underline;
+    position:relative;
+    display: inline-block;
+    
+  }
+
+.instruction-result {
+      max-height: 400px;
+      border: 2px solid red;
+      max-width: 30%;
+}
+
+.question-list {
+    border: 3px salmon dotted;
+    max-height: 400px;
+}
