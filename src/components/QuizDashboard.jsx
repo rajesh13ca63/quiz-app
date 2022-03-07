@@ -11,7 +11,13 @@ const QuizDashboard = () => {
     const handleQuestion = (data) => {
         console.log('Handle Questions called', data);
         setQuestion(data);
-        console.log('after', question);
+    }
+
+    const handleNextQuestion = (data) => {
+        const index = questions.indexOf(data);
+        if(index+1 <=questions.length) {
+            setQuestion(questions[index+1]);
+        }
     }
 
     return (
@@ -26,19 +32,17 @@ const QuizDashboard = () => {
                             <ButtonGroup questions={questions} handleQuestion={handleQuestion}/>
                         </div>
                         <div className="col-md-8">
-                            {question && question.options && question.options.length && <QuizQuestion key={question.questionId} question={question}/> }
+                            {question && question.options && question.options.length && <QuizQuestion key={question.questionId} question={question}
+                            handleNext = {handleNextQuestion}/> }
                             {/* <QuizContext.Provider value={questions} >
                                 <Quiz />
                             </QuizContext.Provider> */}
                         </div>
                     </div>
-
-                    
                 </div>
                 <div className="col-md-4 instruction-result">
                     <h4>Instructions</h4>
                 </div>
-                
             </div>
         </>
     )
