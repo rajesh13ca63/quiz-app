@@ -3,7 +3,7 @@ const buttonMarginLeft =  {
     marginLeft: "9%",
 }
 
-const QuizQuestion = ({question, handleNext}) => {
+const QuizQuestion = ({question, handleNext, handleCalculateScore}) => {
     const [selectedOption, setSelectedOption] = useState('');
 
     const handleOptionChange =(event) => {
@@ -14,7 +14,13 @@ const QuizQuestion = ({question, handleNext}) => {
         setSelectedOption('');
     }
     const handleSave = () => {
-        console.log('handle save called');
+        let data = {};
+        if(selectedOption === question.correctAnswer){
+            data = {id: question.questionId, marks:question.maxMarks};
+        } else {
+            data = {id: question.questionId, marks: 0};
+        }
+        handleCalculateScore(data);
     }
     const handleNextQuestion = () => {
         console.log('handle next click');
@@ -46,9 +52,9 @@ const QuizQuestion = ({question, handleNext}) => {
             </div>
             <div style={buttonMarginLeft}>
                 <button type="" className="btn btn-warning" style={buttonMarginLeft}
-                onClick={handleClear}>Clear</button>
+                onClick={handleClear} disabled={!selectedOption}>Clear</button>
                 <button type="" className="btn btn-primary" style={buttonMarginLeft}
-                onClick={handleSave}>Save</button>
+                onClick={handleSave} disabled={!selectedOption}>Save</button>
                 <button type="" className="btn btn-info" style={buttonMarginLeft}
                 onClick={handleNextQuestion}>Next</button>
             </div>

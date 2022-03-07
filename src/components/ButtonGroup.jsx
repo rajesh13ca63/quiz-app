@@ -15,6 +15,12 @@ const ButtonGroup = ({questions, handleQuestion}) => {
                 <Button key={question.questionId} question={question} 
                 handleButtonClick={handleButtonClick}/>
             )}
+            <div>
+                <h4 style={{color:"green", borderTop:"2px solid black"}}>Instructiosn</h4>
+                <h6>1. All Questiosn are equal weigth of one marks.</h6>
+                <h6>2. No negative marks</h6>
+                <h6>3. Not attempt is consider as zero marks</h6>
+            </div>
         </div>
     )
 }
