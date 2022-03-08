@@ -69,7 +69,7 @@ const QuizDashboard = () => {
                 </div>
                 <div className="col-md-4 col-sm-12 instruction-result">
                     <ScoreBoard result={scoreCard} />
-                    <button className="btn btn-success" style={{position:"absolute", marginTop:"22%", marginLeft: "8%"}}
+                    <button className="btn btn-success" style={{position:"absolute", marginTop:"17%", marginLeft: "8%"}}
                     onClick={showResult}>Submit Quiz</button>
                 </div>
             </div>
