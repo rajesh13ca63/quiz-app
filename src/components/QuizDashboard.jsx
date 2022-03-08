@@ -4,14 +4,46 @@ import QuizContext from "./QuizContext";
 import ButtonGroup from "./ButtonGroup";
 import { useEffect, useState } from "react";
 import QuizQuestion from "./QuizQuestion";
+import ScoreBoard from "./ScoreBoard";
 
 const QuizDashboard = () => {
     const [question, setQuestion] = useState({});
+    let [calScores, setCalScore] = useState([]);
+    const [scoreCard, setScoreCard] = useState({});
     
     const handleQuestion = (data) => {
         console.log('Handle Questions called', data);
         setQuestion(data);
-        console.log('after', question);
+    }
+
+    const handleNextQuestion = (data) => {
+        const index = questions.indexOf(data);
+        if(index+1 <=questions.length) {
+            setQuestion(questions[index+1]);
+        }
+    }
+
+    const showResult = () => {
+        let score = 0; 
+        let wrong = 0;
+        calScores.map(list => {
+            score = score+list.marks
+        });
+        wrong = calScores.length - score;
+        setScoreCard({score: score, attempt:calScores.length, wrong: wrong});
+    }
+
+    const handleCalculateScore = (data) => {
+        console.log('Cal score in dashboard', data);
+        const index = calScores.findIndex(item => item.id === data.id);
+        calScores = [...calScores];
+        if(index>=0)
+            calScores[index] = data;
+        else {
+            calScores.push(data);
+        }
+        setCalScore(calScores);
+        console.log('calscores', calScores);
     }
 
     return (
@@ -26,19 +58,20 @@ const QuizDashboard = () => {
                             <ButtonGroup questions={questions} handleQuestion={handleQuestion}/>
                         </div>
                         <div className="col-md-8">
-                            {question && question.options && question.options.length && <QuizQuestion key={question.questionId} question={question}/> }
+                            {question && question.options && question.options.length && 
+                            <QuizQuestion key={question.questionId} question={question}
+                            handleNext = {handleNextQuestion} handleCalculateScore={handleCalculateScore}/> }
                             {/* <QuizContext.Provider value={questions} >
                                 <Quiz />
                             </QuizContext.Provider> */}
                         </div>
                     </div>
-
-                    
                 </div>
-                <div className="col-md-4 instruction-result">
-                    <h4>Instructions</h4>
+                <div className="col-md-4 col-sm-12 instruction-result">
+                    <ScoreBoard result={scoreCard} />
+                    <button className="btn btn-success" style={{position:"absolute", marginTop:"17%", marginLeft: "8%"}}
+                    onClick={showResult}>Submit Quiz</button>
                 </div>
-                
             </div>
         </>
     )
