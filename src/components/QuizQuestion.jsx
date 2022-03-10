@@ -1,6 +1,9 @@
+import './quizQuestionStyles.css'
+
 import { useState } from "react";
 const buttonMarginLeft =  {
     marginLeft: "9%",
+    marginTop: "2%"
 }
 
 const QuizQuestion = ({question, handleNext, handleCalculateScore}) => {
@@ -26,8 +29,9 @@ const QuizQuestion = ({question, handleNext, handleCalculateScore}) => {
         console.log('handle next click');
         handleNext(question);
     }
-
+      
     return(
+        
         <>
             <div className="card" style={{width: "28rem", margin: "5px"}}>
                 <div className="card-body">
@@ -37,14 +41,15 @@ const QuizQuestion = ({question, handleNext, handleCalculateScore}) => {
                     <div className="list-group list-group-flush">
                         {question.options.map((option, index) => 
                             // <button type="button" className="list-group-item btn btn-primary">{option}</button>
-                            <div className="list-group-item" key={index}>
-                                    <div className="form-check">
-                                        <input type="radio" className="form-check-input" 
-                                        id={question.questionId} value={option} 
-                                        checked={selectedOption === option}
-                                        onChange={(e) => handleOptionChange(e)}/>
-                                        <label className="form-check-label">{option}</label>
-                                    </div>
+                            <div className={"list-group-item" + (selectedOption === option ? " bgcolor": "")} 
+                            key={index} >
+                                <div className="form-check" >
+                                    <input type="radio" className="form-check-input" 
+                                    id={question.questionId} value={option} 
+                                    checked={selectedOption === option}
+                                    onChange={(e) => handleOptionChange(e)}/>
+                                    <label className="form-check-label">{option}</label>
+                                </div>
                             </div>
                         )}
                     </div>
@@ -55,8 +60,8 @@ const QuizQuestion = ({question, handleNext, handleCalculateScore}) => {
                 onClick={handleClear} disabled={!selectedOption}>Clear</button>
                 <button type="" className="btn btn-primary" style={buttonMarginLeft}
                 onClick={handleSave} disabled={!selectedOption}>Save</button>
-                <button type="" className="btn btn-info" style={buttonMarginLeft}
-                onClick={handleNextQuestion}>Next</button>
+                { <button type="" className="btn btn-info" style={buttonMarginLeft}
+                onClick={handleNextQuestion}>Next</button> }
             </div>
         </>
     )

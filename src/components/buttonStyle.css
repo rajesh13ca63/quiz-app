@@ -21,3 +21,36 @@
     line-height: 40px;
     font-size: 30px;
 }
+
+#modal-root {
+    position: relative;
+    z-index: 999;
+}
+
+.warning-modal {
+    width: 400px;
+    height: 150px;
+    background-color: #0099cc;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+}
+
+.message {
+    text-align: center;
+    color: #f1f1f1;
+    padding-top: 18px;
+}
+
+.closebtn {
+    color: #f1f1f1;
+    top: 0;
+    position: absolute;
+    right: 0;
+}
+.continue-close {
+    text-align: center;
+}

@@ -4,6 +4,7 @@ import QuizQuestion from "./QuizQuestion";
 const ButtonGroup = ({questions, handleQuestion}) => {
 
     const handleButtonClick = (question) => {
+        console.log('click on button');
         handleQuestion(question);
     }
 

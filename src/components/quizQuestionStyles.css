@@ -1,0 +1,16 @@
+.list-group > .list-group-item:hover {
+    color: aqua;
+    background-color: cadetblue;
+    border: 2px solid black;
+}
+
+.list-group > .list-group-item:focus {
+    color: red;
+    background-color: goldenrod;
+    border: 2px solid red;
+}
+
+.bgcolor {
+    background-color: cornflowerblue;
+}
+
