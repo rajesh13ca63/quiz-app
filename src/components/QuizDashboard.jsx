@@ -5,11 +5,15 @@ import ButtonGroup from "./ButtonGroup";
 import { useEffect, useState } from "react";
 import QuizQuestion from "./QuizQuestion";
 import ScoreBoard from "./ScoreBoard";
+import WarningModal from "./WarningModal";
 
 const QuizDashboard = () => {
     const [question, setQuestion] = useState({});
     let [calScores, setCalScore] = useState([]);
     const [scoreCard, setScoreCard] = useState({});
+    const [isOpen, setIsOpen] = useState(false);
+    const message = {messageh: "Do you want to submit Quiz", messagep:"Once submit can't change"};
+    
     
     const handleQuestion = (data) => {
         console.log('Handle Questions called', data);
@@ -23,14 +27,21 @@ const QuizDashboard = () => {
         }
     }
 
+    const showModal = () => {
+        setIsOpen(true);
+    }
+
     const showResult = () => {
+        setIsOpen(false);
+        document.body.style.overflow = "hidden";
         let score = 0; 
         let wrong = 0;
         calScores.map(list => {
             score = score+list.marks
         });
         wrong = calScores.length - score;
-        setScoreCard({score: score, attempt:calScores.length, wrong: wrong});
+        const percentageMarks = (score /questions.length)*100;
+        setScoreCard({score: score, attempt:calScores.length, wrong: wrong, percent:percentageMarks});
     }
 
     const handleCalculateScore = (data) => {
@@ -61,6 +72,7 @@ const QuizDashboard = () => {
                             {question && question.options && question.options.length && 
                             <QuizQuestion key={question.questionId} question={question}
                             handleNext = {handleNextQuestion} handleCalculateScore={handleCalculateScore}/> }
+                           
                             {/* <QuizContext.Provider value={questions} >
                                 <Quiz />
                             </QuizContext.Provider> */}
@@ -70,7 +82,8 @@ const QuizDashboard = () => {
                 <div className="col-md-4 col-sm-12 instruction-result">
                     <ScoreBoard result={scoreCard} />
                     <button className="btn btn-success" style={{position:"absolute", marginTop:"17%", marginLeft: "8%"}}
-                    onClick={showResult}>Submit Quiz</button>
+                    onClick={showModal}>Submit Quiz</button>
+                    <WarningModal message={message} isOpen={isOpen} onClose={()=>setIsOpen(false)} onContinue={showResult} />
                 </div>
             </div>
         </>
