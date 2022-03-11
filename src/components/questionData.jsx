@@ -78,7 +78,56 @@ const questions = [
         options: ['7th April', '5th June', '5th May', '9th August'],
         correctAnswer: '5th June',
         maxMarks: 1
+    },
+    {
+        questionId: 11,
+        type: 'MCQ',
+        question: 'Who started Din-i-elahi ?',
+        options: ['Akbar', 'Aurangabad', 'Babar', 'Humayu'],
+        correctAnswer: 'Akbar',
+        maxMarks: 1
+    },
+    {
+        questionId: 12,
+        type: 'MCQ',
+        question: 'who wrote humayun nama ?',
+        options: ['Akbar', 'Gulbadan Begum', 'Babar', 'Humayu'],
+        correctAnswer: 'Gulbadan Begum',
+        maxMarks: 1
+    },
+    {
+        questionId: 13,
+        type: 'MCQ',
+        question: 'where mahavira was born ?',
+        options: ['Patna', 'Kundagram', 'Vaishali', 'Bettiah'],
+        correctAnswer: 'Vaishali',
+        maxMarks: 1
+    },
+    {
+        questionId: 14,
+        type: 'MCQ',
+        question: 'which one is the first veda ?',
+        options: ['Rig veda', 'Sama veda', 'Yajur veda', 'None'],
+        correctAnswer: 'Rig veda',
+        maxMarks: 1
+    },
+    {
+        questionId: 15,
+        type: 'MCQ',
+        question: 'In which year bengal was divided ?',
+        options: ['1905', '1906', '1907', 'None'],
+        correctAnswer: '1905',
+        maxMarks: 1
+    },
+    {
+        questionId: 16,
+        type: 'MCQ',
+        question: 'who wrote gitanjali ?',
+        options: ['Ravindranath Taingore', 'Kalidash', 'KP Thakur', 'None'],
+        correctAnswer: 'Ravindranath Taigore',
+        maxMarks: 1
     }
+
 
 ];
 
