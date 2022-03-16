@@ -21,6 +21,9 @@ const HeaderComponent = () => {
                     <li className="nav-item">
                         <Link to="/quiz" className="nav-link navbar-text">Quiz</Link>
                     </li>
+                    <li>
+                        <Link to='/movie' className='nav-link navbar-text'>Movie</Link>
+                    </li>
                 </ul>
                 </div>
             </div>
