@@ -18,6 +18,12 @@ const MovieDashboard = () => {
         // });
         setMovies(data.Search);
     }
+    const handleKeyEnter = (event) => {
+        if(event.key === 'Enter') {
+            console.log('hanlde enter key');
+            handleSearch(searchMovie);
+        }
+    }
     
     useEffect(() => {
         console.log('useEffect called');
@@ -29,7 +35,8 @@ const MovieDashboard = () => {
             <h1>Movie Land</h1>
             <div className='intpurSeach'>
                 <input type="text" placeholder='Search movie'
-                value={searchMovie} onChange={(e)=>setSearchMovie(e.target.value)}/>
+                value={searchMovie} onChange={(e)=>setSearchMovie(e.target.value)}
+                onKeyDown={handleKeyEnter}/>
                 <img src='./image/search_icon.svg' alt='searc_icon'
                 onClick={() => handleSearch(searchMovie)}></img>
             </div>

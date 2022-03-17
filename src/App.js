@@ -4,6 +4,7 @@ import QuizDashboard from './components/QuizDashboard';
 import HeaderComponent from './components/headercomponents/HeaderComponent';
 import { Route, Routes } from 'react-router-dom';
 import MovieDashboard from './MovieComponents/MovieDashboard';
+import Counter from './components/Counter';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
 	  <Routes>
 		  <Route path='/quiz' element={<QuizDashboard />} />
       <Route path='/movie' element={<MovieDashboard />} />
+      <Route path='/counter' element={<Counter/>}/>
 	  </Routes>
     </div>
   );

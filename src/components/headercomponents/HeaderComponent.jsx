@@ -24,6 +24,9 @@ const HeaderComponent = () => {
                     <li>
                         <Link to='/movie' className='nav-link navbar-text'>Movie</Link>
                     </li>
+                    <li>
+                        <Link to='/counter' className='nav-link navbar-text'>Counter</Link>
+                    </li>
                 </ul>
                 </div>
             </div>
