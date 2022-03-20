@@ -1,29 +1,43 @@
 import { Link } from 'react-router-dom';
 import './headerStyle.css';
 
+const handleNavbar = () => {
+    const navbarLinks = document.getElementsByClassName('navbar-links')[0];
+        console.log('hello toggle');
+        navbarLinks.classList.toggle('active');
+}
+
 const HeaderComponent = () => {
     return (
         <div >
-            <nav className="navbar navbar-expand-lg header-bg">
-                <div className='container'>
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarNav">
-
-                <ul className="navbar-nav">
-                    <li className="nav-item active">
-                        <Link to="/" className="nav-link navbar-text" >Home</Link>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link navbar-text" href="#">About</a>
-                    </li>
-                    <li className="nav-item">
-                        <Link to="/quiz" className="nav-link navbar-text">Quiz</Link>
-                    </li>
-                </ul>
+            <nav className="navbar">
+                <div className="brand-title">
+                    Home
                 </div>
-            </div>
+                <a href="#" className='toggle-button' onClick={handleNavbar}>
+                    <span className='bar'></span>
+                    <span className='bar'></span>
+                    <span className='bar'></span>
+                </a>
+                <div className='navbar-links'>
+                    <ul>
+                        <li>
+                            <Link to="/" className="nav-link" >Home</Link>
+                        </li>
+                        <li>
+                            <a className="nav-link" href="#">About</a>
+                        </li>
+                        <li>
+                            <Link to="/quiz" className="nav-link">Quiz</Link>
+                        </li>
+                        <li>
+                            <Link to='/movie' className='nav-link'>Movie</Link>
+                        </li>
+                        <li>
+                            <Link to='/counter' className='nav-link'>Counter</Link>
+                        </li>
+                    </ul>
+                </div>
             </nav>
         </div>
     )
