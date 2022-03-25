@@ -11,8 +11,8 @@ const HeaderComponent = () => {
     return (
         <div >
             <nav className="navbar">
-                <div className="brand-title">
-                    Home
+                <div className="brand-logo">
+                    <span><img src='./image/logo-tree.svg' alt='logo'/></span>
                 </div>
                 <a href="#" className='toggle-button' onClick={handleNavbar}>
                     <span className='bar'></span>
@@ -20,9 +20,9 @@ const HeaderComponent = () => {
                     <span className='bar'></span>
                 </a>
                 <div className='navbar-links'>
-                    <ul>
+                    <ul className='left-flex-items'>
                         <li>
-                            <Link to="/" className="nav-link" >Home</Link>
+                            <Link to="/" className="nav-link">Home</Link>
                         </li>
                         <li>
                             <a className="nav-link" href="#">About</a>
@@ -35,6 +35,17 @@ const HeaderComponent = () => {
                         </li>
                         <li>
                             <Link to='/counter' className='nav-link'>Counter</Link>
+                        </li>
+                    </ul>
+                    <ul className='right-flex-items'>
+                        <li>
+                            <Link to='/counter' className='nav-link'>Logout</Link>
+                        </li>
+                        <li>
+                            <Link to='/counter' className='nav-link'>Login</Link>
+                        </li>
+                        <li>
+                        <Link to='/counter' className='nav-link'>Signup</Link>
                         </li>
                     </ul>
                 </div>

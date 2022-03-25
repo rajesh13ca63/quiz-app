@@ -9,10 +9,17 @@
     color: white;
     background-color: teal;
 }
+.left-flex-items {
+    flex: 50%;
+}
+.right-flex-items {
+    flex: 50%;
+    justify-content: flex-end;
+}
 
-.brand-title {
-    font-size: 1.5rem;
-    margin: .5rem;
+.brand-logo {
+    width: 40px;
+    height: 50px;
 }
 .navbar-links {
     display: flex;
@@ -88,6 +95,13 @@
     }
     .navbar-links li a {
         padding: .5rem 1rem;
+    }
+    
+    .right-flex-items {
+        flex: 100%;
+    }
+    .left-flex-items {
+        flex: 100%;
     }
 }
 
