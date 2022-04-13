@@ -18,7 +18,6 @@ function reducer(countr, action) {
             return countr;
     }
 }
-
 const Counter = () => {
     const initValue = 0;
     const [countr, dispatch] = useReducer(reducer, initValue);

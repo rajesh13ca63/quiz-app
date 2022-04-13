@@ -5,6 +5,5 @@ const MovieNotFound = (props) => {
         <img src='./image/not-found.png' alt='not found' style={{width:"200px", height:"200px"}} />
         </div>))
     else return null;
-    
 }
 export default MovieNotFound;

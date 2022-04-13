@@ -20,7 +20,7 @@ const MovieDashboard = () => {
         //     setMovies(response)
         // });
         setMovies(data.Search);
-            setLoader(false);
+        setLoader(false);
     }
     const handleKeyEnter = (event) => {
         if(event.key === 'Enter') {

@@ -36,6 +36,12 @@ const HeaderComponent = () => {
                         <li>
                             <Link to='/counter' className='nav-link'>Counter</Link>
                         </li>
+                        <li>
+                            <Link to='/products' className='nav-link'>Products</Link>
+                        </li>
+                        <li>
+                            <Link to='pagination' className='nav-link'>Pagination</Link>
+                        </li>
                     </ul>
                     <ul className='right-flex-items'>
                         <li>

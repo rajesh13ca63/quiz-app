@@ -1,0 +1,35 @@
+.product-container {
+    display: flex;
+    justify-content: center;
+}
+
+.filter-products {
+    width: 500px;
+    min-height: 400px;
+    background-color: rgb(245 239 239);
+    align-items: center;
+    border: 2px solid black;
+    position: relative;
+    text-align: center;
+    top: 1rem;
+    border-radius: 10px;
+}
+
+.search-bar >input[type="text"] {
+    width: 250px;
+    height: 35px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.check-box > input[type="checkbox"] {
+    margin: 8px;
+}
+
+@media screen and (max-width: 668px) {
+    .filter-products {
+        background-color: cadetblue;
+        width: 300px;
+        min-height: 300px;
+    }
+}
